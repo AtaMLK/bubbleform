@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e4e4e4;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+}
+.container .bottom_card {
+  position: absolute;
+  background-color: #f8f8f8;
+  width: 20rem;
+  top: -10px;
+  left: 0;
+  transform: scale(0.97);
+  height: 1rem;
+  border-radius: 3px;
+  z-index: -1;
+  box-shadow: 0 0 5px 1px #e6e3e3;
+}
+.container form {
+  position: relative;
+}
+.container form .login_card {
+  background-color: #f7f7f7;
+  width: 20rem;
+  padding: 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 1px #e6e3e3;
+  transition: all 0.5s ease-in-out;
+  transform-origin: right;
+}
+.container form .login_card .toggle::after {
+  content: "\f040";
+  font-family: "Fontawesome";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  position: absolute;
+  text-align: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  color: #f7f7f7;
+  border-radius: 50%;
+  background-color: rgb(218, 9, 9);
+  top: 0;
+  right: -2.2rem;
+}
+.container form .login_card .login_card-title {
+  line-height: 4rem;
+  color: rgb(218, 9, 9);
+  position: relative;
+}
+.container form .login_card .login_card-title::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  background-color: rgb(218, 9, 9);
+  top: 0;
+  left: -1.55rem;
+  opacity: 1;
+}
+.container form .login_card .inputs {
+  position: relative;
+  padding: 0 1rem;
+}
+.container form .login_card .inputs .login_card-user,
+.container form .login_card .inputs .login_card-pass {
+  position: relative;
+  overflow: hidden;
+}
+.container form .login_card .inputs .login_card-user label,
+.container form .login_card .inputs .login_card-pass label {
+  position: absolute;
+  color: #b8b6b6;
+  top: 1.2rem;
+  left: 0;
+  z-index: 1;
+  transition: all 0.55s ease;
+}
+.container form .login_card .inputs .login_card-user input,
+.container form .login_card .inputs .login_card-pass input {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  width: 100%;
+  border-bottom: 1px solid #b8b6b6;
+  background-color: transparent;
+  outline: 0;
+}
+.container form .login_card .inputs .login_card-user input:focus ~ label,
+.container form .login_card .inputs .login_card-pass input:focus ~ label {
+  transform: translateY(-1rem) scale(0.75);
+  color: #e0bebe;
+}
+.container form .login_card .inputs .login_card-user input:focus ~ .bar::before, .container form .login_card .inputs .login_card-user input:focus ~ .bar::after,
+.container form .login_card .inputs .login_card-pass input:focus ~ .bar::before,
+.container form .login_card .inputs .login_card-pass input:focus ~ .bar::after {
+  width: 100%;
+}
+.container form .login_card .inputs .bar::before {
+  content: "";
+  bottom: 23px;
+  left: 50%;
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  background: rgb(218, 9, 9);
+  transition: all 0.5s linear;
+  transform-origin: right;
+}
+.container form .login_card .inputs .bar::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 23px;
+  right: 50%;
+  height: 1.5px;
+  background: rgb(218, 9, 9);
+  transition: all 0.5s linear;
+  transform-origin: left;
+}
+.container form .login_card .inputs .login_card-btn {
+  color: #b8b6b6;
+  padding: 1rem;
+  border: 2px solid #b8b6b6;
+  border-radius: 3px;
+  margin: 1rem 3rem;
+  width: 60%;
+  background-color: transparent;
+  transition: all 0.5s linear;
+}
+.container form .login_card .inputs .login_card-btn:hover {
+  color: rgb(218, 9, 9);
+  border: 2px solid rgb(218, 9, 9);
+}
+.container form .login_card .login_card-recover {
+  text-decoration: none;
+  color: rgba(41, 41, 235, 0.87);
+  font-size: 12px;
+  margin-top: 0;
+}
+.container form .signup_card {
+  background-color: #f7f7f7;
+  width: 20rem;
+  padding: 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 5px #c7c6c6;
+  position: absolute;
+  top: 0.35rem;
+  background-color: #fff;
+  transition: all 0.55s ease-in-out;
+  overflow: hidden;
+}
+.container form .signup_card .close2 {
+  background-color: rgb(218, 9, 9);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+}
+.container form .signup_card .close3 {
+  background-color: rgb(218, 9, 9);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1rem;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+}
+.container form .signup_card .close {
+  position: absolute;
+  top: 2.5rem;
+  right: 2rem;
+  z-index: 3;
+}
+.container form .signup_card .close::after {
+  content: "\f00d";
+  font-family: "Fontawesome";
+  font-size: 26px;
+  text-align: center;
+  color: #f7f7f7;
+  border-radius: 50%;
+}
+.container form .signup_card .signup_card-title {
+  line-height: 4rem;
+  color: #fff;
+  position: relative;
+}
+.container form .signup_card .signup_card-title::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  background-color: #fff;
+  top: 0;
+  left: -1.55rem;
+}
+.container form .signup_card .inputs {
+  position: relative;
+  padding: 0 1rem;
+}
+.container form .signup_card .inputs .signup_card-user,
+.container form .signup_card .inputs .signup_card-pass {
+  position: relative;
+  overflow: hidden;
+}
+.container form .signup_card .inputs .signup_card-user label,
+.container form .signup_card .inputs .signup_card-pass label {
+  position: absolute;
+  color: #b8b6b6;
+  top: 1.2rem;
+  left: 0;
+  z-index: 1;
+  transition: all 0.55s ease;
+}
+.container form .signup_card .inputs .signup_card-user input,
+.container form .signup_card .inputs .signup_card-pass input {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  width: 100%;
+  border-bottom: 1px solid #b8b6b6;
+  background-color: transparent;
+  outline: 0;
+}
+.container form .signup_card .inputs .signup_card-user input:focus ~ label,
+.container form .signup_card .inputs .signup_card-pass input:focus ~ label {
+  transform: translateY(-1rem) scale(0.75);
+  color: #e0bebe;
+}
+.container form .signup_card .inputs .signup_card-user input:focus ~ .bar::before, .container form .signup_card .inputs .signup_card-user input:focus ~ .bar::after,
+.container form .signup_card .inputs .signup_card-pass input:focus ~ .bar::before,
+.container form .signup_card .inputs .signup_card-pass input:focus ~ .bar::after {
+  width: 100%;
+}
+.container form .signup_card .inputs .bar::before {
+  content: "";
+  bottom: 23px;
+  left: 50%;
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  background: #fff;
+  transition: all 0.5s linear;
+  transform-origin: right;
+}
+.container form .signup_card .inputs .bar::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 23px;
+  right: 50%;
+  height: 1.5px;
+  background: #fff;
+  transition: all 0.5s linear;
+  transform-origin: left;
+}
+.container form .signup_card .inputs .signup_card-btn {
+  color: rgb(218, 9, 9);
+  padding: 1rem;
+  border: 2px solid rgb(247, 108, 108);
+  border-radius: 3px;
+  margin: 1rem 3rem;
+  width: 60%;
+  background-color: #fff;
+  transition: all 0.5s linear;
+}
+.container form .signup_card .inputs .signup_card-btn:hover {
+  color: #b8b6b6;
+  border: 2px solid #b8b6b6;
+}/*# sourceMappingURL=style.css.map */

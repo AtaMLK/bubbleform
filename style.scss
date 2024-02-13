@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+$font-family: "Poppins", sans-serif;
+$font-size: 16px;
+$bg-color: #e4e4e4;
+$text2-color: #b8b6b6;
+$red-color: rgb(218, 9, 9);
+$card-bg: #f7f7f7;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+body {
+  background-color: $bg-color;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hidden {
+  opacity: 0;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  .bottom_card {
+    position: absolute;
+    background-color: #f8f8f8;
+    width: 20rem;
+    top: -10px;
+    left: 0;
+    transform: scale(0.97);
+    height: 1rem;
+    border-radius: 3px;
+    z-index: -1;
+    box-shadow: 0 0 5px 1px #e6e3e3;
+  }
+  form {
+    position: relative;
+    .login_card {
+      background-color: $card-bg;
+      width: 20rem;
+      padding: 1.5rem;
+      border-radius: 3px;
+      box-shadow: 0 0 5px 1px #e6e3e3;
+      transition: all 0.5s ease-in-out;
+      transform-origin: right;
+      .toggle {
+        &::after {
+          content: "\f040";
+          font-family: "Fontawesome";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: $font-size + 10px;
+          position: absolute;
+          text-align: center;
+          width: 4.5rem;
+          height: 4.5rem;
+          color: #f7f7f7;
+          border-radius: 50%;
+          background-color: $red-color;
+          top: 0;
+          right: -2.2rem;
+        }
+      }
+
+      .login_card-title {
+        line-height: 4rem;
+        color: $red-color;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 4px;
+          height: 100%;
+          border-radius: 0 10px 10px 0;
+          background-color: $red-color;
+          top: 0;
+          left: -1.55rem;
+          opacity: 1;
+        }
+      }
+      .inputs {
+        position: relative;
+        padding: 0 1rem;
+        .login_card-user,
+        .login_card-pass {
+          position: relative;
+          overflow: hidden;
+          label {
+            position: absolute;
+            color: $text2-color;
+            top: 1.2rem;
+            left: 0;
+            z-index: 1;
+            transition: all 0.55s ease;
+          }
+          input {
+            position: relative;
+            margin: 1.5rem 0;
+            border: 0;
+            width: 100%;
+            border-bottom: 1px solid $text2-color;
+            background-color: transparent;
+            outline: 0;
+            &:focus ~ label {
+              transform: translateY(-1rem) scale(0.75);
+              color: #e0bebe;
+            }
+            &:focus ~ .bar::before,
+            &:focus ~ .bar::after {
+              width: 100%;
+            }
+          }
+        }
+        .bar {
+          &::before {
+            content: "";
+            bottom: 23px;
+            left: 50%;
+            position: absolute;
+            width: 0;
+            height: 1.5px;
+            background: $red-color;
+            transition: all 0.5s linear;
+            transform-origin: right;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            bottom: 23px;
+            right: 50%;
+            height: 1.5px;
+            background: $red-color;
+            transition: all 0.5s linear;
+            transform-origin: left;
+          }
+        }
+        .login_card-btn {
+          color: $text2-color;
+          padding: 1rem;
+          border: 2px solid $text2-color;
+          border-radius: 3px;
+          margin: 1rem 3rem;
+          width: 60%;
+          background-color: transparent;
+          transition: all 0.5s linear;
+          &:hover {
+            color: $red-color;
+            border: 2px solid $red-color;
+          }
+        }
+      }
+      .login_card-recover {
+        text-decoration: none;
+        color: rgba(41, 41, 235, 0.87);
+        font-size: 12px;
+        margin-top: 0;
+      }
+    }
+    .signup_card {
+      background-color: $card-bg;
+      width: 20rem;
+      padding: 1.5rem;
+      border-radius: 3px;
+      box-shadow: 0 0 10px 5px #c7c6c6;
+      position: absolute;
+      top: 0.35rem;
+      background-color: #fff;
+      transition: all 0.55s ease-in-out;
+      overflow: hidden;
+      .close2 {
+        background-color: $red-color;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        border-radius: 50%;
+        transition: transform 0.5s ease-in-out;
+      }
+      .close3 {
+        background-color: $red-color;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1rem;
+        border-radius: 50%;
+        transition: transform 0.5s ease-in-out;
+      }
+      .close {
+        position: absolute;
+        top: 2.5rem;
+        right: 2rem;
+        z-index: 3;
+        &::after {
+          content: "\f00d";
+          font-family: "Fontawesome";
+          font-size: $font-size + 10px;
+          text-align: center;
+          color: #f7f7f7;
+          border-radius: 50%;
+        }
+      }
+
+      .signup_card-title {
+        line-height: 4rem;
+        color: #fff;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 4px;
+          height: 100%;
+          border-radius: 0 10px 10px 0;
+          background-color: #fff;
+          top: 0;
+          left: -1.55rem;
+        }
+      }
+      .inputs {
+        position: relative;
+        padding: 0 1rem;
+        .signup_card-user,
+        .signup_card-pass {
+          position: relative;
+          overflow: hidden;
+          label {
+            position: absolute;
+            color: $text2-color;
+            top: 1.2rem;
+            left: 0;
+            z-index: 1;
+            transition: all 0.55s ease;
+          }
+          input {
+            position: relative;
+            margin: 1.5rem 0;
+            border: 0;
+            width: 100%;
+            border-bottom: 1px solid $text2-color;
+            background-color: transparent;
+            outline: 0;
+            &:focus ~ label {
+              transform: translateY(-1rem) scale(0.75);
+              color: #e0bebe;
+            }
+            &:focus ~ .bar::before,
+            &:focus ~ .bar::after {
+              width: 100%;
+            }
+          }
+        }
+        .bar {
+          &::before {
+            content: "";
+            bottom: 23px;
+            left: 50%;
+            position: absolute;
+            width: 0;
+            height: 1.5px;
+            background: #fff;
+            transition: all 0.5s linear;
+            transform-origin: right;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            bottom: 23px;
+            right: 50%;
+            height: 1.5px;
+            background: #fff;
+            transition: all 0.5s linear;
+            transform-origin: left;
+          }
+        }
+        .signup_card-btn {
+          color: $red-color;
+          padding: 1rem;
+          border: 2px solid rgb(247, 108, 108);
+          border-radius: 3px;
+          margin: 1rem 3rem;
+          width: 60%;
+          background-color: #fff;
+          transition: all 0.5s linear;
+          &:hover {
+            color: $text2-color;
+            border: 2px solid $text2-color;
+          }
+        }
+      }
+    }
+  }
+}
